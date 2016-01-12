@@ -132,9 +132,7 @@ module Brcobranca
 			# @return [Date]
 			# @raise [ArgumentError] Caso {#data_documento} esteja em branco.
 			def data_vencimento
-				if data_vencimento_boleto.present?
-					data_vencimento_boleto
-				else
+				if data_vencimento.blank?
 					return data_documento unless dias_vencimento
 					if vencimento_fixo.present?
 						vencimento_fixo
