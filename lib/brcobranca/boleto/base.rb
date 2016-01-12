@@ -139,7 +139,7 @@ module Brcobranca
 				elsif Date.new(ano_referencia_guia.to_i, mes_referencia) < Date.new(Date.current.year, Date.current.month)
 					Date.today.end_of_month
 				else
-					Date.new(ano_referencia_guia.to_i, mes_referencia).end_of_month
+					super
 				end
 			end
 
