@@ -79,6 +79,29 @@ module Brcobranca
       attr_accessor :avalista_documento
       # <b>OPCIONAL</b>: Endereço da pessoa que envia o boleto
       attr_accessor :cedente_endereco
+      # para boleto sindical empresa...
+      attr_accessor :documento_cedente_cnpj
+      attr_accessor :documento_cedente_sicas
+      attr_accessor :cedente_endereco_log
+      attr_accessor :cedente_endereco_num
+      attr_accessor :cedente_endereco_compl
+      attr_accessor :cedente_endereco_bairro
+      attr_accessor :cedente_endereco_cep
+      attr_accessor :cedente_endereco_cidade
+      attr_accessor :cedente_endereco_uf
+      attr_accessor :sacado_endereco_log
+      attr_accessor :sacado_endereco_num
+      attr_accessor :sacado_endereco_compl
+      attr_accessor :sacado_endereco_bairro
+      attr_accessor :sacado_endereco_cep
+      attr_accessor :sacado_endereco_cidade
+      attr_accessor :sacado_endereco_uf
+      attr_accessor :mora_multa
+      attr_accessor :total_valor
+      attr_accessor :vencimento_fixo
+      attr_accessor :exercicio
+      attr_accessor :total_profissionais
+      attr_accessor :total_remuneracao
 
       # Validações
       validates_presence_of :agencia, :conta_corrente, :moeda, :especie_documento, :especie, :aceite, :numero_documento, message: 'não pode estar em branco.'
