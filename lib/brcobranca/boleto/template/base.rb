@@ -8,6 +8,8 @@ module Brcobranca
 
         def define_template(template)
           case template
+          when :rghost_sindical_empresa
+            return [Brcobranca::Boleto::Template::RghostSindicalEmpresa]
           when :rghost
             return [Brcobranca::Boleto::Template::Rghost]
           when :rghost_carne
