@@ -113,7 +113,7 @@ module Brcobranca
 			# @param [Hash] campos
 			def initialize(campos = {})
 				padrao = {
-					moeda: '9', data_documento: Date.today, quantidade: 1,
+					moeda: '9', data_documento: Date.today, data_vencimento: Date.today, quantidade: 1,
 					especie_documento: 'DM', especie: 'R$', aceite: 'S', valor: 0.0,
 					local_pagamento: 'QUALQUER BANCO ATÉ O VENCIMENTO'
 				}
@@ -132,17 +132,14 @@ module Brcobranca
 			# @return [Date]
 			# @raise [ArgumentError] Caso {#data_documento} esteja em branco.
 			def data_vencimento
-				if data_vencimento.blank?
-					return data_documento unless dias_vencimento
-					if vencimento_fixo.present?
-						vencimento_fixo
-					elsif mes_referencia == 55
-						Date.today.end_of_month
-					elsif Date.new(ano_referencia_guia.to_i, mes_referencia) < Date.new(Date.current.year, Date.current.month)
-						Date.today.end_of_month
-					else
-						Date.new(ano_referencia_guia.to_i, mes_referencia).end_of_month
-					end
+				if vencimento_fixo.present?
+					vencimento_fixo
+				elsif mes_referencia == 55
+					Date.today.end_of_month
+				elsif Date.new(ano_referencia_guia.to_i, mes_referencia) < Date.new(Date.current.year, Date.current.month)
+					Date.today.end_of_month
+				else
+					Date.new(ano_referencia_guia.to_i, mes_referencia).end_of_month
 				end
 			end
 
