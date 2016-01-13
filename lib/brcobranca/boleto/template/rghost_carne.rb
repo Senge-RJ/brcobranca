@@ -246,9 +246,9 @@ module Brcobranca
           doc.moveto x: colunas[8], y: linhas[3]
           doc.show boleto.especie
 
-          # aceite
+          # aceitar_apos_vencimento
           doc.moveto x: colunas[9], y: linhas[3]
-          doc.show boleto.aceite
+          doc.show boleto.aceitar_apos_vencimento
 
           # dt processamento
           doc.moveto x: colunas[10], y: linhas[3]

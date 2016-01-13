@@ -16,7 +16,7 @@ module Brcobranca
 
         # Nova instancia do Citibank
         def initialize(campos = {})
-          campos = { aceite: 'N', carteira: '1' }.merge!(campos)
+          campos = { aceitar_apos_vencimento: 'N', carteira: '1' }.merge!(campos)
           super(campos)
         end
 
@@ -94,7 +94,7 @@ module Brcobranca
           # ou será preenchido no banco após a entrada do arquivo no sistema de cobrança, visto que os códigos utilizados serão 04 ou 06 no campo Tipo de Emissão.)
           # (Para a modalidade de Cobrança Flexível, a opção de envio por e- mail deverá ser um parâmetro cadastral.)
           detalhe << '07'                                                   # Tipo de Emissão                       X[02]
-          detalhe << aceite                                                 # aceite (A/N)                          X[01]
+          detalhe << aceitar_apos_vencimento                                                 # aceitar_apos_vencimento (A/N)                          X[01]
           detalhe << pagamento.data_emissao.strftime('%d%m%y')              # data de emissao                       9[06]
 
           # 00 = SEM INSTRUÇÂO: após o vencimento, o título sofrerá a instrução presente no cadastro do cliente. Não havendo instruções no cadastro do cliente, o título será baixado automaticamente após 60 dias e o pagamento, após vencimento, poderá ser restrito ao Citibank

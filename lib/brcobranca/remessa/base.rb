@@ -18,8 +18,8 @@ module Brcobranca
       attr_accessor :carteira
       # sequencial remessa (num. sequencial que nao pode ser repetido nem zerado)
       attr_accessor :sequencial_remessa
-      # aceite (A = ACEITO/N = NAO ACEITO)
-      attr_accessor :aceite
+      # aceitar_apos_vencimento (A = ACEITO/N = NAO ACEITO)
+      attr_accessor :aceitar_apos_vencimento
 
       # Validações do Rails 3
       include ActiveModel::Validations
@@ -48,7 +48,7 @@ module Brcobranca
       # @param campos [Hash]
       #
       def initialize(campos = {})
-        campos = { aceite: 'N' }.merge!(campos)
+        campos = { aceitar_apos_vencimento: 'N' }.merge!(campos)
         campos.each do |campo, valor|
           send "#{campo}=", valor
         end

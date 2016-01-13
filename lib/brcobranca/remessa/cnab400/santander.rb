@@ -18,7 +18,7 @@ module Brcobranca
         validates_length_of :codigo_transmissao, maximum: 20, message: 'deve ter no máximo 20 dígitos.'
 
         def initialize(campos = {})
-          campos = { aceite: 'N', carteira: '101', codigo_carteira: '1' }.merge!(campos)
+          campos = { aceitar_apos_vencimento: 'N', carteira: '101', codigo_carteira: '1' }.merge!(campos)
           super(campos)
         end
 
@@ -109,7 +109,7 @@ module Brcobranca
           # 06 = DUPLICATA DE SERVIÇO
           # 07 = LETRA DE CAMBIO
           detalhe << pagamento.especie_titulo                               # Espécie de documento                  9[02]
-          detalhe << aceite                                                 # aceite (A/N)                          X[01]
+          detalhe << aceitar_apos_vencimento                                                 # aceitar_apos_vencimento (A/N)                          X[01]
           detalhe << pagamento.data_emissao.strftime('%d%m%y')              # data de emissao                       9[06]
 
           # Instrução cobrança

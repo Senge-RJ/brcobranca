@@ -16,7 +16,7 @@ module Brcobranca
 
         # Nova instancia do Itau
         def initialize(campos = {})
-          campos = { aceite: 'N' }.merge!(campos)
+          campos = { aceitar_apos_vencimento: 'N' }.merge!(campos)
           super(campos)
         end
 
@@ -110,7 +110,7 @@ module Brcobranca
           detalhe << cod_banco                                              # codigo banco                          9[03]
           detalhe << ''.rjust(5, '0')                                       # agencia cobradora - deixar zero       9[05]
           detalhe << '99'                                                   # especie  do titulo                    X[02]
-          detalhe << aceite                                                 # aceite (A/N)                          X[01]
+          detalhe << aceitar_apos_vencimento                                                 # aceitar_apos_vencimento (A/N)                          X[01]
           detalhe << pagamento.data_emissao.strftime('%d%m%y')              # data de emissao                       9[06]
           detalhe << ''.rjust(2, '0')                                       # 1a instrucao - deixar zero            X[02]
           detalhe << ''.rjust(2, '0')                                       # 2a instrucao - deixar zero            X[02]

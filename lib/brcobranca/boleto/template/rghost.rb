@@ -192,7 +192,7 @@ module Brcobranca
           doc.moveto x: '10 cm', y: '14.4 cm'
           doc.show boleto.especie_documento
           doc.moveto x: '11.7 cm', y: '14.4 cm'
-          doc.show boleto.aceite
+          doc.show boleto.aceitar_apos_vencimento
           doc.moveto x: '13 cm', y: '14.4 cm'
           doc.show boleto.data_processamento.to_s_br if boleto.data_processamento
           doc.moveto x: '16.5 cm', y: '14.4 cm'

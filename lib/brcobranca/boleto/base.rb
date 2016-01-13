@@ -66,7 +66,7 @@ module Brcobranca
 			# <b>REQUERIDO</b>: Informação sobre onde o sacado podera efetuar o pagamento
 			attr_accessor :local_pagamento
 			# <b>REQUERIDO</b>: Informa se o banco deve aceitar o boleto após o vencimento ou não( S ou N, quase sempre S)
-			attr_accessor :aceite
+			attr_accessor :aceitar_apos_vencimento
 			# <b>REQUERIDO</b>: Nome da pessoa que receberá o boleto
 			attr_accessor :sacado
 			# <b>OPCIONAL</b>: Endereco da pessoa que receberá o boleto
@@ -106,7 +106,7 @@ module Brcobranca
 			attr_accessor :total_remuneracao
 
 			# Validações
-			validates_presence_of :agencia, :conta_corrente, :moeda, :especie_documento, :especie, :aceite, :numero_documento, message: 'não pode estar em branco.'
+			validates_presence_of :agencia, :conta_corrente, :moeda, :especie_documento, :especie, :aceitar_apos_vencimento, :numero_documento, message: 'não pode estar em branco.'
 			validates_numericality_of :convenio, :agencia, :conta_corrente, :numero_documento, message: 'não é um número.', allow_nil: true
 
 			# Nova instancia da classe Base
@@ -114,7 +114,7 @@ module Brcobranca
 			def initialize(campos = {})
 				padrao = {
 					moeda: '9', data_documento: Date.today, data_vencimento: Date.current.end_of_month, quantidade: 1,
-					especie_documento: 'DM', especie: 'R$', aceite: 'S', valor: 0.0,
+					especie_documento: 'DM', especie: 'R$', aceitar_apos_vencimento: 'S', valor: 0.0,
 					local_pagamento: 'QUALQUER BANCO ATÉ O VENCIMENTO'
 				}
 

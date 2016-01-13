@@ -6,7 +6,7 @@ RSpec.describe Brcobranca::Boleto::Sicoob do #:nodoc:[all]
     @valid_attributes = {
       data_documento: Date.parse("2013-07-15"),
       data_vencimento: Date.parse("2013-08-29"),
-      aceite: "N",
+      aceitar_apos_vencimento: "N",
       valor: 100.0,
       cedente: "Kivanio Barbosa",
       documento_cedente: "12345678912",
@@ -28,7 +28,7 @@ RSpec.describe Brcobranca::Boleto::Sicoob do #:nodoc:[all]
     expect(boleto_novo.moeda).to eql("9")
     expect(boleto_novo.data_documento).to eql(Date.today)
     expect(boleto_novo.data_vencimento).to eql(Date.today)
-    expect(boleto_novo.aceite).to eql("S")
+    expect(boleto_novo.aceitar_apos_vencimento).to eql("S")
     expect(boleto_novo.quantidade).to eql("001")
     expect(boleto_novo.valor).to eql(0.0)
     expect(boleto_novo.valor_documento).to eql(0.0)
@@ -45,7 +45,7 @@ RSpec.describe Brcobranca::Boleto::Sicoob do #:nodoc:[all]
     expect(boleto_novo.moeda).to eql("9")
     expect(boleto_novo.data_documento).to eql(Date.parse("2013-07-15"))
     expect(boleto_novo.data_vencimento).to eql(Date.parse("2013-08-29"))
-    expect(boleto_novo.aceite).to eql("N")
+    expect(boleto_novo.aceitar_apos_vencimento).to eql("N")
     expect(boleto_novo.quantidade).to eql("001")
     expect(boleto_novo.valor).to eql(100.0)
     expect(boleto_novo.valor_documento).to eql(100.0)

@@ -28,7 +28,7 @@ RSpec.describe Brcobranca::Boleto::Sicredi do
     expect(boleto_novo.moeda).to eql('9')
     expect(boleto_novo.data_documento).to eql(Date.today)
     expect(boleto_novo.data_vencimento).to eql(Date.today)
-    expect(boleto_novo.aceite).to eql('S')
+    expect(boleto_novo.aceitar_apos_vencimento).to eql('S')
     expect(boleto_novo.quantidade).to eql(1)
     expect(boleto_novo.valor).to eql(0.0)
     expect(boleto_novo.valor_documento).to eql(0.0)
@@ -44,7 +44,7 @@ RSpec.describe Brcobranca::Boleto::Sicredi do
     expect(boleto_novo.moeda).to eql('9')
     expect(boleto_novo.data_documento).to eql(Date.parse('2012-01-18'))
     expect(boleto_novo.data_vencimento).to eql(Date.today)
-    expect(boleto_novo.aceite).to eql('S')
+    expect(boleto_novo.aceitar_apos_vencimento).to eql('S')
     expect(boleto_novo.quantidade).to eql(1)
     expect(boleto_novo.valor).to eql(0.0)
     expect(boleto_novo.valor_documento).to eql(0.0)
@@ -69,7 +69,7 @@ RSpec.describe Brcobranca::Boleto::Sicredi do
     @valid_attributes[:agencia] = '1234'
     @valid_attributes[:carteira] = '03'
     @valid_attributes[:posto] = '18'
-    @valid_attributes[:aceite] = 'N'
+    @valid_attributes[:aceitar_apos_vencimento] = 'N'
     @valid_attributes[:byte_idt] = '2'
     boleto_novo = described_class.new(@valid_attributes)
 
