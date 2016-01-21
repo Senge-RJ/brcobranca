@@ -118,7 +118,8 @@ module Brcobranca
 					local_pagamento: 'QUALQUER BANCO ATÉ O VENCIMENTO'
 				}
 
-				campos = padrao.merge!(campos)
+				campos.merge!(padrao) {|_, campo, campo_padrao| campo.nil? ? campo_padrao : campo }
+
 				campos.each do |campo, valor|
 					send "#{campo}=", valor
 				end
