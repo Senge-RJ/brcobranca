@@ -221,15 +221,15 @@ module Brcobranca
 
           #  Valor do Documento  - Sacador
           doc.moveto x: '14.8 cm', y: '17.1 cm'
-          doc.show boleto.valor
+          doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
           doc.moveto x: '14.8 cm', y: '14.9 cm'
-          doc.show boleto.mora_multa
+          doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
           doc.moveto x: '14.8 cm', y: '13.5 cm'
-          doc.show boleto.total_valor
+          doc.show number_to_currency(boleto.total_valor)
 
           if boleto.sacado_documento.size == 14 
 
@@ -345,15 +345,15 @@ module Brcobranca
 
           #  Valor do Documento  - Sacador
           doc.moveto x: '15.4 cm', y: '6.7 cm'
-          doc.show boleto.valor
+          doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
           doc.moveto x: '15.4 cm', y: '5 cm'
-          doc.show boleto.mora_multa
+          doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
           doc.moveto x: '15.4 cm', y: '3.3 cm'
-          doc.show boleto.total_valor
+          doc.show number_to_currency(boleto.total_valor)
         end
 
         # Fim Guia Caixa -----------------------------------------------------------------------------------------------------------------
