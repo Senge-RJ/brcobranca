@@ -23,6 +23,15 @@ module Brcobranca
 				'42'
 				"#{campo_livre}"
 			end
+
+			# Forçar logo da caixa
+			def logotipo
+				if Brcobranca.configuration.gerador == :rghost_carne
+					File.join(File.dirname(__FILE__), '..', 'arquivos', 'logos', 'caixa_carne.eps')
+				else
+					File.join(File.dirname(__FILE__), '..', 'arquivos', 'logos', 'caixa.eps')
+				end
+			end
 		end
 	end
 end
