@@ -121,7 +121,7 @@ module Brcobranca
 				campos.merge!(padrao) {|_, campo, campo_padrao| campo.nil? ? campo_padrao : campo }
 
 				campos.each do |campo, valor|
-					send "#{campo}=", valor
+					send "#{campo}=", valor if respond_to?("#{campo}=")
 				end
 
 				yield self if block_given?
