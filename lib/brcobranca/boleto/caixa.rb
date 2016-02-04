@@ -9,7 +9,7 @@ module Brcobranca
     class Caixa < Base # Caixa
       # <b>REQUERIDO</b>: Emissão do boleto
       attr_accessor :emissao
-      
+
       # Validações
       #Modalidade/Carteira de Cobrança (1-Registrada | 2-Sem Registro)
       validates_length_of :carteira, is: 2, message: 'deve possuir 2 dígitos.'
@@ -68,7 +68,7 @@ module Brcobranca
       def nosso_numero
         "#{carteira}#{emissao}#{numero_documento}"
       end
-      
+
       # Dígito verificador do Nosso Número
       # Utiliza-se o [-1..-1] para retornar o último caracter
       # @return [String]
