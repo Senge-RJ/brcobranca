@@ -16,7 +16,7 @@ module Brcobranca
       # Emissão do boleto (4-Beneficiário)
       validates_length_of :emissao, is: 1, message: 'deve possuir 1 dígitos.'
       validates_length_of :convenio, is: 6, message: 'deve possuir 6 dígitos.'
-      validates_length_of :numero_documento, is: 15, message: 'deve possuir 15 dígitos.'
+      validates_length_of :numero_documento, is: 17, message: 'deve possuir 17 dígitos.'
 
       # Nova instância da CaixaEconomica
       # @param (see Brcobranca::Boleto::Base#initialize)
@@ -53,7 +53,7 @@ module Brcobranca
       # Número seqüencial utilizado para identificar o boleto.
       # @return [String] 15 caracteres numéricos.
       def numero_documento=(valor)
-        @numero_documento = valor.to_s.rjust(15, '0') if valor
+        @numero_documento = valor.to_s.rjust(17, '0') if valor
       end
 
       # Nosso número, 17 dígitos
