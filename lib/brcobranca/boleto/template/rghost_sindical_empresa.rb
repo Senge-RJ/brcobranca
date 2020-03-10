@@ -261,6 +261,10 @@ module Brcobranca
 
             doc.moveto x: '1.8 cm', y: '14.5 cm'
             doc.show "valor da contribuição são da responsabilidade EXCLUSIVA do próprio profissional contribuinte."
+
+            doc.moveto x: '1.8 cm', y: '14.20 cm'
+            doc.show "SAC CAIXA: 0800 726 0101 (informações, reclamações, sugestões e elogios).
+ Para pessoas com deficiência auditiva ou de fala: 0800 726 2492. Ouvidoria: 0800 725 7474. caixa.gov.br.*"
           end
             
         end
