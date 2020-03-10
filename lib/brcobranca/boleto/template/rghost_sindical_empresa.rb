@@ -265,10 +265,10 @@ module Brcobranca
             doc.moveto x: '1.8 cm', y: '14.0 cm'
             doc.show "SAC CAIXA: 0800 726 0101 (informações, reclamações, sugestões e elogios)."
 
-            doc.moveto x: '1.8 cm', y: '13.6 cm'
+            doc.moveto x: '1.8 cm', y: '13.8 cm'
             doc.show "Para pessoas com deficiência auditiva ou de fala: 0800 726 2492."
 
-            doc.moveto x: '1.8 cm', y: '13.3 cm'
+            doc.moveto x: '1.8 cm', y: '13.6 cm'
             doc.show  "Ouvidoria: 0800 725 7474. caixa.gov.br.*"
           end
             
