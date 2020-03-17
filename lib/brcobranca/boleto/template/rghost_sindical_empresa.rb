@@ -122,11 +122,11 @@ module Brcobranca
           doc.show boleto.valor
 
           # Data de Vencimento
-          doc.moveto x: '15.40 cm', y: '26.7 cm'
+          doc.moveto x: '15.50 cm', y: '26.6 cm'
           doc.show boleto.data_vencimento.to_s_br
 
           # Ano de exercicio
-          doc.moveto x: '16 cm', y: '11.9 cm'
+          doc.moveto x: '17.60 cm', y: '26.6 cm'
           doc.show boleto.exercicio
 
           # Cendete
