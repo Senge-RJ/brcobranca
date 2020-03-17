@@ -231,6 +231,10 @@ module Brcobranca
           doc.moveto x: '14.8 cm', y: '16.05 cm'
           doc.show number_to_currency(boleto.total_valor)
 
+          # Categoria
+          doc.moveto x: '8.0 cm', y: '20.30 cm'
+          doc.show 'X'
+
           #if boleto.sacado_documento.size == 14
           #
           #   doc.moveto x: '10.3 cm', y: '15.6 cm'
@@ -359,11 +363,11 @@ module Brcobranca
           doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
-          doc.moveto x: '15.4 cm', y: '6.60 cm'
+          doc.moveto x: '15.4 cm', y: '6.80 cm'
           doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
-          doc.moveto x: '15.4 cm', y: '5.0 cm'
+          doc.moveto x: '15.4 cm', y: '5.2 cm'
           doc.show number_to_currency(boleto.total_valor)
         end
 
