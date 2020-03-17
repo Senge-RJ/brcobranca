@@ -180,15 +180,15 @@ module Brcobranca
           # Sacado - Pagador
 
           #  Nome sacador
-          doc.moveto x: '2.9 cm', y: '23.10 cm'
+          doc.moveto x: '2.9 cm', y: '23.00 cm'
           doc.show boleto.sacado
 
           #  Documento sacador
-          doc.moveto x: '15.40 cm', y: '23.10 cm'
+          doc.moveto x: '15.40 cm', y: '23.00 cm'
           doc.show boleto.sacado_documento
 
           #  Endereço Sacador
-          doc.moveto x: '2.9 cm', y: '22.10 cm'
+          doc.moveto x: '2.9 cm', y: '22.20 cm'
           doc.show boleto.sacado_endereco_log
 
           # #  Numero do Endereço - Sacador
@@ -200,23 +200,23 @@ module Brcobranca
           # doc.show boleto.sacado_endereco_compl
 
           #  CEP do Endereço - Sacador
-          doc.moveto x: '2.9 cm', y: '21.10 cm'
+          doc.moveto x: '2.9 cm', y: '21.50 cm'
           doc.show boleto.sacado_endereco_cep
 
           #  Bairro do Endereço - Sacador
-          doc.moveto x: '5.10 cm', y: '21.10 cm'
+          doc.moveto x: '5.10 cm', y: '21.50 cm'
           doc.show boleto.sacado_endereco_bairro
 
           #  Cidade do  - Sacador
-          doc.moveto x: '11.10 cm', y: '21.10 cm'
+          doc.moveto x: '11.20 cm', y: '21.50 cm'
           doc.show boleto.sacado_endereco_cidade
 
           #  Estado  - Sacador
-          doc.moveto x: '16 cm', y: '21.10 cm'
+          doc.moveto x: '16.10 cm', y: '21.50 cm'
           doc.show boleto.sacado_endereco_uf
 
           #  Codigo Atividade  - Sacador
-          doc.moveto x: '17 cm', y: '21.10 cm'
+          doc.moveto x: '17.10 cm', y: '21.50 cm'
           doc.show '711'
 
           #  Valor do Documento  - Sacador
