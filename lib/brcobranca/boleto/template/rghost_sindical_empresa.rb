@@ -98,7 +98,7 @@ module Brcobranca
 
           # Cedente - Beneficiario
 
-          # Logo do Banco
+          # Logo do Banco - Ajustado
           doc.image(boleto.logotipo, x: '2.10 cm', y: '27.50 cm', zoom: 80)
 
           # Numero do banco e DV
@@ -109,7 +109,7 @@ module Brcobranca
           doc.moveto x: '3.7 cm', y: '12.65 cm'
           doc.show boleto.codigo_barras.linha_digitavel, tag: :grande
 
-          # Codigo da Entidade Sindica (Código de Cedente)
+          # Codigo da Entidade Sindica (Código de Cedente) Ajustado
           doc.moveto x: '14.80 cm', y: '25.70 cm'
           doc.show boleto.documento_cedente_sicas
 
@@ -121,16 +121,16 @@ module Brcobranca
           doc.moveto x: '9 cm', y: '11.9 cm'
           doc.show boleto.valor
 
-          # Data de Vencimento
-          doc.moveto x: '15.50 cm', y: '26.6 cm'
+          # Data de Vencimento Ajustado
+          doc.moveto x: '15.80 cm', y: '26.6 cm'
           doc.show boleto.data_vencimento.to_s_br
 
-          # Ano de exercicio
-          doc.moveto x: '17.60 cm', y: '26.6 cm'
+          # Ano de exercicio Ajustado
+          doc.moveto x: '17.80 cm', y: '26.6 cm'
           doc.show boleto.exercicio
 
           # Cendete
-          doc.moveto x: '3 cm', y: '22.3 cm'
+          doc.moveto x: '3 cm', y: '25.70 cm'
           doc.show boleto.cedente
 
           # Data de Vencimento
@@ -146,19 +146,19 @@ module Brcobranca
           doc.show boleto.documento_cedente_sicas
 
           # Endereco
-          doc.moveto x: '2.9 cm', y: '21.7 cm'
+          doc.moveto x: '2.9 cm', y: '24.70 cm'
           doc.show boleto.cedente_endereco_log
 
           # Numero
-          doc.moveto x: '8.9 cm', y: '21.7 cm'
+          doc.moveto x: '8.9 cm', y: '24.70 cm'
           doc.show boleto.cedente_endereco_num
 
           # Complemento
-          doc.moveto x: '12.9 cm', y: '21.6 cm'
+          doc.moveto x: '12.9 cm', y: '24.70 cm'
           doc.show boleto.cedente_endereco_compl
 
           # Documento Cendete - CNPJ
-          doc.moveto x: '14.9 cm', y: '21.6 cm'
+          doc.moveto x: '14.9 cm', y: '24.70 cm'
           doc.show boleto.documento_cedente
 
           # Bairro
