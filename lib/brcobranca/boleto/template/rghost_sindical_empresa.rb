@@ -134,11 +134,11 @@ module Brcobranca
           doc.show boleto.cedente
 
           # Data de Vencimento
-          doc.moveto x: '15.4 cm', y: '23.1 cm'
+          doc.moveto x: '15.4 cm', y: '23.2 cm'
           doc.show boleto.data_vencimento.to_s_br
 
           # Ano de exercicio
-          doc.moveto x: '17.80 cm', y: '19.27 cm'
+          doc.moveto x: '17.80 cm', y: '1.27 cm'
           doc.show boleto.exercicio
 
           # Codigo da Entidade Sindica
