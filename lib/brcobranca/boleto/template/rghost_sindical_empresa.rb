@@ -114,11 +114,11 @@ module Brcobranca
           doc.show boleto.documento_cedente_sicas
 
           # Nosso numero
-          doc.moveto x: '5.80 cm', y: '14.70 cm'
+          doc.moveto x: '5.95 cm', y: '14.65 cm'
           doc.show boleto.numero_documento.to_i.to_s
 
           #  Valor do Documento  - Sacador
-          doc.moveto x: '9.20 cm', y: '14.70 cm'
+          doc.moveto x: '9.30 cm', y: '14.65 cm'
           doc.show boleto.valor
 
           # Data de Vencimento Ajustado
@@ -134,15 +134,15 @@ module Brcobranca
           doc.show boleto.cedente
 
           # Data de Vencimento
-          doc.moveto x: '13.0 cm', y: '14.70 cm'
+          doc.moveto x: '13.0 cm', y: '14.65 cm'
           doc.show boleto.data_vencimento.to_s_br
 
           # Ano de exercicio
-          doc.moveto x: '16.80 cm', y: '14.70 cm'
+          doc.moveto x: '16.80 cm', y: '14.65 cm'
           doc.show boleto.exercicio
 
           # Codigo da Entidade Sindica
-          doc.moveto x: '2.40 cm', y: '14.70 cm'
+          doc.moveto x: '2.7 cm', y: '14.65 cm'
           doc.show boleto.documento_cedente_sicas
 
           # Endereco
