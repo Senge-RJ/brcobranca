@@ -102,11 +102,11 @@ module Brcobranca
           doc.image(boleto.logotipo, x: '2.10 cm', y: '27.50 cm', zoom: 80)
 
           # Numero do banco e DV
-          doc.moveto x: '1.3 cm', y: '12.65 cm'
+          doc.moveto x: '2.4 cm', y: '15.65 cm'
           doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :grande
 
           # Linha digital
-          doc.moveto x: '3.7 cm', y: '12.65 cm'
+          doc.moveto x: '4.0 cm', y: '15.65 cm'
           doc.show boleto.codigo_barras.linha_digitavel, tag: :grande
 
           # Codigo da Entidade Sindica (Código de Cedente) Ajustado
@@ -291,15 +291,15 @@ module Brcobranca
           # end
 
           # Data do documento
-          doc.moveto x: '2.8 cm', y: '10.20 cm'
+          doc.moveto x: '2.8 cm', y: '10.00 cm'
           doc.show "#{Date.current.to_s_br}"
 
           # Nosso numero
-          doc.moveto x: '5.0 cm', y: '10.20 cm'
+          doc.moveto x: '5.0 cm', y: '10.00 cm'
           doc.show boleto.numero_documento.to_i.to_s, tag: :pequena
 
           # Data do documento
-          doc.moveto x: '10 cm', y: '10.2 cm'
+          doc.moveto x: '11.20 cm', y: '10.00 cm'
           doc.show "#{Date.current.to_s_br}"
 
           # Ano de exercicio
