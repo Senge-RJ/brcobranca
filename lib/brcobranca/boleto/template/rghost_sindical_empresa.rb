@@ -114,11 +114,11 @@ module Brcobranca
           doc.show boleto.documento_cedente_sicas
 
           # Nosso numero
-          doc.moveto x: '4 cm', y: '11.9 cm'
+          doc.moveto x: '5.80 cm', y: '14.9 cm'
           doc.show boleto.numero_documento.to_i.to_s
 
           #  Valor do Documento  - Sacador
-          doc.moveto x: '9 cm', y: '11.9 cm'
+          doc.moveto x: '9.20 cm', y: '14.9 cm'
           doc.show boleto.valor
 
           # Data de Vencimento Ajustado
@@ -134,11 +134,11 @@ module Brcobranca
           doc.show boleto.cedente
 
           # Data de Vencimento
-          doc.moveto x: '15.4 cm', y: '23.2 cm'
+          doc.moveto x: '13.0 cm', y: '14.9 cm'
           doc.show boleto.data_vencimento.to_s_br
 
           # Ano de exercicio
-          doc.moveto x: '17.80 cm', y: '1.27 cm'
+          doc.moveto x: '16.80 cm', y: '14.90 cm'
           doc.show boleto.exercicio
 
           # Codigo da Entidade Sindica
@@ -271,24 +271,24 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '1.90 cm', y: '12.50 cm', zoom: 60)
+          doc.image(boleto.logotipo, x: '2.10 cm', y: '12.50 cm', zoom: 60)
 
           # Numero do banco e DV
           doc.moveto x: '4.9 cm', y: '9 cm'
           doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :media
 
           # Linha digital
-          doc.moveto x: '7.2 cm', y: '9 cm'
+          doc.moveto x: '7.80 cm', y: '9 cm'
           doc.show boleto.codigo_barras.linha_digitavel, tag: :media
 
           # Cendete
           doc.moveto x: '2.9 cm', y: '8 cm'
           doc.show boleto.cedente
 
-          if boleto.sacado_documento.size == 14 
-            doc.moveto x: '7.9 cm', y: '6.7 cm'
-            doc.show number_to_currency(boleto.total_remuneracao)
-          end
+          # if boleto.sacado_documento.size == 14
+          #   doc.moveto x: '7.9 cm', y: '6.7 cm'
+          #   doc.show number_to_currency(boleto.total_remuneracao)
+          # end
 
           # Data do documento
           doc.moveto x: '1 cm', y: '7.2 cm'
