@@ -232,7 +232,7 @@ module Brcobranca
           doc.show number_to_currency(boleto.total_valor)
 
           # Categoria
-          doc.moveto x: '8.2 cm', y: '20.40 cm'
+          doc.moveto x: '8.1 cm', y: '20.30 cm'
           doc.show 'X', tag: :grande
 
           #if boleto.sacado_documento.size == 14
