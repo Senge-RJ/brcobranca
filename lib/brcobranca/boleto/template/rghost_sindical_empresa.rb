@@ -234,17 +234,16 @@ module Brcobranca
           # Categoria
           #
           if boleto.sacado_documento.size == 14
-            doc.moveto x: '2.40 cm', y: '20.30 cm'
+            doc.moveto x: '2.60 cm', y: '20.30 cm'
             doc.show 'X', tag: :grande
           else
             doc.moveto x: '8.1 cm', y: '20.30 cm'
             doc.show 'X', tag: :grande
           end
 
-
           if boleto.sacado_documento.size == 14
 
-            doc.moveto x: '10.3 cm', y: '18.5 cm'
+            doc.moveto x: '10.3 cm', y: '18.8 cm'
             doc.show number_to_currency(boleto.total_remuneracao)
 
             doc.moveto x: '11.3 cm', y: '19.5 cm'
