@@ -200,68 +200,68 @@ module Brcobranca
           # doc.show boleto.sacado_endereco_compl
 
           #  CEP do Endereço - Sacador
-          doc.moveto x: '2.9 cm', y: '21.50 cm'
+          doc.moveto x: '2.9 cm', y: '21.40 cm'
           doc.show boleto.sacado_endereco_cep
 
           #  Bairro do Endereço - Sacador
-          doc.moveto x: '5.10 cm', y: '21.50 cm'
+          doc.moveto x: '5.10 cm', y: '21.40 cm'
           doc.show boleto.sacado_endereco_bairro
 
           #  Cidade do  - Sacador
-          doc.moveto x: '11.20 cm', y: '21.50 cm'
+          doc.moveto x: '11.20 cm', y: '21.40 cm'
           doc.show boleto.sacado_endereco_cidade
 
           #  Estado  - Sacador
-          doc.moveto x: '16.10 cm', y: '21.50 cm'
+          doc.moveto x: '16.20 cm', y: '21.40 cm'
           doc.show boleto.sacado_endereco_uf
 
           #  Codigo Atividade  - Sacador
-          doc.moveto x: '17.10 cm', y: '21.50 cm'
+          doc.moveto x: '17.10 cm', y: '21.40 cm'
           doc.show '711'
 
           #  Valor do Documento  - Sacador
-          doc.moveto x: '14.8 cm', y: '17.1 cm'
+          doc.moveto x: '14.8 cm', y: '20.4 cm'
           doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
-          doc.moveto x: '14.8 cm', y: '14.9 cm'
+          doc.moveto x: '14.8 cm', y: '19.0 cm'
           doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
-          doc.moveto x: '14.8 cm', y: '13.5 cm'
+          doc.moveto x: '14.8 cm', y: '18.2 cm'
           doc.show number_to_currency(boleto.total_valor)
 
-          if boleto.sacado_documento.size == 14 
-
-            doc.moveto x: '10.3 cm', y: '15.6 cm'
-            doc.show number_to_currency(boleto.total_remuneracao)
-
-            doc.moveto x: '11.3 cm', y: '14.9 cm'
-            doc.show boleto.total_profissionais
-
-            doc.moveto x: '1.8 cm', y: '15.1 cm'
-            doc.show "Prezado Empregador"
-
-            doc.moveto x: '1.8 cm', y: '14.8 cm'
-            doc.show "As informações dos dados do(s) profissional(is)"
-
-            doc.moveto x: '1.8 cm', y: '14.5 cm'
-            doc.show "e do valor de cada contribuição referente a esta GRCSU são da responsabilidade"
-
-            doc.moveto x: '1.8 cm', y: '14.2 cm'
-            doc.show "EXCLUSIVA do próprio EMPREGADOR."
-         
-
-          else
-            doc.moveto x: '1.8 cm', y: '15.1 cm'
+          #if boleto.sacado_documento.size == 14
+          #
+          #   doc.moveto x: '10.3 cm', y: '15.6 cm'
+          #   doc.show number_to_currency(boleto.total_remuneracao)
+          #
+          #   doc.moveto x: '11.3 cm', y: '14.9 cm'
+          #   doc.show boleto.total_profissionais
+          #
+          #   doc.moveto x: '1.8 cm', y: '15.1 cm'
+          #   doc.show "Prezado Empregador"
+          #
+          #   doc.moveto x: '1.8 cm', y: '14.8 cm'
+          #   doc.show "As informações dos dados do(s) profissional(is)"
+          #
+          #   doc.moveto x: '1.8 cm', y: '14.5 cm'
+          #   doc.show "e do valor de cada contribuição referente a esta GRCSU são da responsabilidade"
+          #
+          #   doc.moveto x: '1.8 cm', y: '14.2 cm'
+          #   doc.show "EXCLUSIVA do próprio EMPREGADOR."
+          #
+          #
+          #else
+            doc.moveto x: '2.9 cm', y: '19.2 cm'
             doc.show "Prezado(a) profissional,"
 
-            doc.moveto x: '1.8 cm', y: '14.8 cm'
+            doc.moveto x: '2.9 cm', y: '19.9 cm'
             doc.show "As informações dos dados do contribuinte e do"
 
-            doc.moveto x: '1.8 cm', y: '14.5 cm'
+            doc.moveto x: '2.9 cm', y: '19.6 cm'
             doc.show "valor da contribuição são da responsabilidade EXCLUSIVA do próprio profissional contribuinte."
-          end
+          #end
             
         end
 
