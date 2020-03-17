@@ -224,11 +224,11 @@ module Brcobranca
           doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
-          doc.moveto x: '14.8 cm', y: '17.9 cm'
+          doc.moveto x: '14.8 cm', y: '17.8 cm'
           doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
-          doc.moveto x: '14.8 cm', y: '16.1 cm'
+          doc.moveto x: '14.8 cm', y: '16.0 cm'
           doc.show number_to_currency(boleto.total_valor)
 
           #if boleto.sacado_documento.size == 14
@@ -262,7 +262,7 @@ module Brcobranca
             doc.moveto x: '2.8 cm', y: '16.4 cm'
             doc.show "valor da contribuição são da responsabilidade"
 
-            doc.moveto x: '2.8 cm', y: '16.1 cm'
+            doc.moveto x: '2.8 cm', y: '16.0 cm'
             doc.show "EXCLUSIVA do próprio profissional contribuinte."
           #end
             
