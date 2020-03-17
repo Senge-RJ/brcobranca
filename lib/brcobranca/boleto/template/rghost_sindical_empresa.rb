@@ -99,7 +99,7 @@ module Brcobranca
           # Cedente - Beneficiario
 
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '2.40 cm', y: '1.00 cm', zoom: 80)
+          doc.image(boleto.logotipo, x: '3.00 cm', y: '1.00 cm', zoom: 80)
 
           # Numero do banco e DV
           doc.moveto x: '1.3 cm', y: '12.65 cm'
@@ -277,7 +277,7 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '0.5 cm', y: '9 cm', zoom: 60)
+          doc.image(boleto.logotipo, x: '3.00 cm', y: '2.00 cm', zoom: 80)
 
           # Numero do banco e DV
           doc.moveto x: '4.9 cm', y: '9 cm'
