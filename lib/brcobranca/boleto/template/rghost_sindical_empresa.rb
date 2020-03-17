@@ -146,23 +146,23 @@ module Brcobranca
           doc.show boleto.documento_cedente_sicas
 
           # Endereco
-          doc.moveto x: '2.9 cm', y: '24.70 cm'
+          doc.moveto x: '2.9 cm', y: '25.20 cm'
           doc.show boleto.cedente_endereco_log
 
           # Numero
-          doc.moveto x: '8.9 cm', y: '24.70 cm'
+          doc.moveto x: '9.40 cm', y: '25.20 cm'
           doc.show boleto.cedente_endereco_num
 
           # Complemento
-          doc.moveto x: '12.9 cm', y: '24.70 cm'
+          doc.moveto x: '11.40 cm', y: '25.20 cm'
           doc.show boleto.cedente_endereco_compl
 
           # Documento Cendete - CNPJ
-          doc.moveto x: '14.9 cm', y: '24.70 cm'
+          doc.moveto x: '14.9 cm', y: '25.20 cm'
           doc.show boleto.documento_cedente
 
           # Bairro
-          doc.moveto x: '2 cm', y: '21 cm'
+          doc.moveto x: '2.9 cm', y: '24.20 cm'
           doc.show boleto.cedente_endereco_bairro
 
           # CEP
