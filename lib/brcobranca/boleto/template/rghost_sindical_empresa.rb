@@ -232,15 +232,22 @@ module Brcobranca
           doc.show number_to_currency(boleto.total_valor)
 
           # Categoria
-          doc.moveto x: '8.1 cm', y: '20.30 cm'
-          doc.show 'X', tag: :grande
+          #
+          if boleto.sacado_documento.size == 14
+            doc.moveto x: '2.40 cm', y: '20.30 cm'
+            doc.show 'X', tag: :grande
+          else
+            doc.moveto x: '8.1 cm', y: '20.30 cm'
+            doc.show 'X', tag: :grande
+          end
+
 
           if boleto.sacado_documento.size == 14
 
-            doc.moveto x: '10.3 cm', y: '18.0 cm'
+            doc.moveto x: '10.3 cm', y: '18.5 cm'
             doc.show number_to_currency(boleto.total_remuneracao)
 
-            doc.moveto x: '11.3 cm', y: '19.0 cm'
+            doc.moveto x: '11.3 cm', y: '19.5 cm'
             doc.show boleto.total_profissionais
 
             doc.moveto x: '2.8 cm', y: '17.0 cm'
@@ -254,8 +261,6 @@ module Brcobranca
 
             doc.moveto x: '2.8 cm', y: '16.10 cm'
             doc.show "EXCLUSIVA do próprio EMPREGADOR."
-
-
           else
             doc.moveto x: '2.8 cm', y: '17.2 cm'
             doc.show "Prezado(a) profissional,"
