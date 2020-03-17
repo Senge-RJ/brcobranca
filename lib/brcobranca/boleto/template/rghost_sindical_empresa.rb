@@ -102,11 +102,11 @@ module Brcobranca
           doc.image(boleto.logotipo, x: '2.10 cm', y: '27.50 cm', zoom: 80)
 
           # Numero do banco e DV
-          doc.moveto x: '2.8 cm', y: '15.40 cm'
+          doc.moveto x: '2.8 cm', y: '15.50 cm'
           doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :grande
 
           # Linha digital
-          doc.moveto x: '4.3 cm', y: '15.40 cm'
+          doc.moveto x: '4.3 cm', y: '15.50 cm'
           doc.show boleto.codigo_barras.linha_digitavel, tag: :grande
 
           # Codigo da Entidade Sindica (Código de Cedente) Ajustado
@@ -296,7 +296,11 @@ module Brcobranca
 
           # Nosso numero
           doc.moveto x: '5.0 cm', y: '10.00 cm'
-          doc.show boleto.numero_documento.to_i.to_s, tag: :pequena
+          doc.show boleto.numero_documento.to_i.to_s
+
+          # Especie documento
+          doc.moveto x: '8.40 cm', y: '10.00 cm'
+          doc.show 'GRCSU', tag: :pequena
 
           # Data do documento
           doc.moveto x: '11.20 cm', y: '10.00 cm'
@@ -341,7 +345,7 @@ module Brcobranca
 
           # Local pagamento
           doc.moveto x: '2.9 cm', y: '11.7 cm'
-          doc.show 'LOCAL'
+          doc.show 'PREFERENCIALMENTE NAS CASAS LOTÉRICAS ATÉ O VALOR LIMITE'
 
           doc.moveto x: '15.4 cm', y: '7.8 cm'
           doc.show "#{agencia}/#{conta_corrente}"
