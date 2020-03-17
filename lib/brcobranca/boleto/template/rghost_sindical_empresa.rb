@@ -99,7 +99,7 @@ module Brcobranca
           # Cedente - Beneficiario
 
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '0.5 cm', y: '23.85 cm', zoom: 80)
+          doc.image(boleto.logotipo, x: '1.9 cm', y: '2.4 cm', zoom: 80)
 
           # Numero do banco e DV
           doc.moveto x: '1.3 cm', y: '12.65 cm'
@@ -122,7 +122,7 @@ module Brcobranca
           doc.show boleto.valor
 
           # Data de Vencimento
-          doc.moveto x: '12 cm', y: '11.9 cm'
+          doc.moveto x: '14.2 cm', y: '2.5 cm'
           doc.show boleto.data_vencimento.to_s_br
 
           # Ano de exercicio
