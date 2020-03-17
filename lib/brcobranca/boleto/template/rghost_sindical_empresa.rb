@@ -224,11 +224,11 @@ module Brcobranca
           doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
-          doc.moveto x: '14.8 cm', y: '17.8 cm'
+          doc.moveto x: '14.8 cm', y: '17.85 cm'
           doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
-          doc.moveto x: '14.8 cm', y: '16.0 cm'
+          doc.moveto x: '14.8 cm', y: '16.05 cm'
           doc.show number_to_currency(boleto.total_valor)
 
           #if boleto.sacado_documento.size == 14
@@ -259,7 +259,7 @@ module Brcobranca
             doc.moveto x: '2.8 cm', y: '16.7 cm'
             doc.show "As informações dos dados do contribuinte e do"
 
-            doc.moveto x: '2.8 cm', y: '16.4 cm'
+            doc.moveto x: '2.8 cm', y: '16.35 cm'
             doc.show "valor da contribuição são da responsabilidade"
 
             doc.moveto x: '2.8 cm', y: '16.0 cm'
@@ -271,7 +271,7 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '1.70 cm', y: '12.50 cm', zoom: 80)
+          doc.image(boleto.logotipo, x: '1.90 cm', y: '12.50 cm', zoom: 60)
 
           # Numero do banco e DV
           doc.moveto x: '4.9 cm', y: '9 cm'
