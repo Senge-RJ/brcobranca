@@ -282,7 +282,7 @@ module Brcobranca
           doc.show boleto.codigo_barras.linha_digitavel, tag: :media
 
           # Cendete
-          doc.moveto x: '2.9 cm', y: '10.20 cm'
+          doc.moveto x: '2.8 cm', y: '11.20 cm'
           doc.show boleto.cedente
 
           # if boleto.sacado_documento.size == 14
@@ -291,38 +291,38 @@ module Brcobranca
           # end
 
           # Data do documento
-          doc.moveto x: '2.9 cm', y: '9.20 cm'
+          doc.moveto x: '2.8 cm', y: '10.20 cm'
           doc.show "#{Date.current.to_s_br}"
 
           # Nosso numero
-          doc.moveto x: '5.0 cm', y: '9.20 cm'
+          doc.moveto x: '5.0 cm', y: '10.20 cm'
           doc.show boleto.numero_documento.to_i.to_s, tag: :pequena
 
           # Data do documento
-          doc.moveto x: '10 cm', y: '8.2 cm'
+          doc.moveto x: '10 cm', y: '10.2 cm'
           doc.show "#{Date.current.to_s_br}"
 
           # Ano de exercicio
-          doc.moveto x: '2.9 cm', y: '6.7 cm'
+          doc.moveto x: '2.8 cm', y: '9.20 cm'
           doc.show boleto.exercicio
 
           # Instruções
-          doc.moveto x: '1 cm', y: '5.8 cm'
+          doc.moveto x: '2.8 cm', y: '7.5 cm'
           doc.show boleto.instrucao1
 
-          doc.moveto x: '1 cm', y: '5.4 cm'
+          doc.moveto x: '2.8 cm', y: '7.2 cm'
           doc.show boleto.instrucao2
 
-          doc.moveto x: '1 cm', y: '5 cm'
+          doc.moveto x: '2.8 cm', y: '6.9 cm'
           doc.show boleto.instrucao3
 
-          doc.moveto x: '1 cm', y: '4.6 cm'
+          doc.moveto x: '2.8 cm', y: '6.6 cm'
           doc.show boleto.instrucao4
 
-          doc.moveto x: '1 cm', y: '4.2 cm'
+          doc.moveto x: '2.8 cm', y: '6.3 cm'
           doc.show boleto.instrucao5
 
-          doc.moveto x: '1 cm', y: '3.8 cm'
+          doc.moveto x: '2.8 cm', y: '6.0 cm'
           doc.show boleto.instrucao6
 
           # sacado
