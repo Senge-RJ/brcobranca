@@ -103,11 +103,11 @@ module Brcobranca
 
           # Numero do banco e DV
           doc.moveto x: '2.8 cm', y: '15.50 cm'
-          doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :grande
+          doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :media
 
           # Linha digital
           doc.moveto x: '4.3 cm', y: '15.50 cm'
-          doc.show boleto.codigo_barras.linha_digitavel, tag: :grande
+          doc.show boleto.codigo_barras.linha_digitavel, tag: :media
 
           # Codigo da Entidade Sindica (Código de Cedente) Ajustado
           doc.moveto x: '14.80 cm', y: '25.70 cm'
@@ -271,7 +271,7 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '2.10 cm', y: '12.50 cm', zoom: 45)
+          doc.image(boleto.logotipo, x: '2.20 cm', y: '12.50 cm', zoom: 45)
 
           # Numero do banco e DV
           doc.moveto x: '6.35 cm', y: '12.50 cm'
@@ -299,7 +299,7 @@ module Brcobranca
           doc.show boleto.numero_documento.to_i.to_s
 
           # Especie documento
-          doc.moveto x: '8.40 cm', y: '10.00 cm'
+          doc.moveto x: '8.60 cm', y: '10.00 cm'
           doc.show 'GRCSU', tag: :pequena
 
           # Data do documento
@@ -340,30 +340,30 @@ module Brcobranca
           doc.show "#{boleto.sacado_endereco_log} #{boleto.sacado_endereco_num} #{boleto.sacado_endereco_compl} #{boleto.sacado_endereco_bairro} #{boleto.sacado_endereco_cidade}  #{boleto.sacado_endereco_uf}"
 
           # Data de Vencimento
-          doc.moveto x: '15.4 cm', y: '8.4 cm'
+          doc.moveto x: '15.4 cm', y: '11.70 cm'
           doc.show boleto.data_vencimento.to_s_br
 
           # Local pagamento
-          doc.moveto x: '2.9 cm', y: '11.7 cm'
+          doc.moveto x: '2.9 cm', y: '11.70 cm'
           doc.show 'PREFERENCIALMENTE NAS CASAS LOTÉRICAS ATÉ O VALOR LIMITE'
 
-          doc.moveto x: '15.4 cm', y: '7.8 cm'
-          doc.show "#{agencia}/#{conta_corrente}"
+          doc.moveto x: '15.4 cm', y: '10.90 cm'
+          doc.show "#{agencia}/#{boleto.documento_cedente_sicas}"
 
           # Nosso numero
-          doc.moveto x: '15.4 cm', y: '7.3 cm'
+          doc.moveto x: '15.4 cm', y: '10.00 cm'
           doc.show boleto.numero_documento.to_i.to_s
 
           #  Valor do Documento  - Sacador
-          doc.moveto x: '15.4 cm', y: '6.7 cm'
+          doc.moveto x: '15.4 cm', y: '9.20 cm'
           doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
-          doc.moveto x: '15.4 cm', y: '5 cm'
+          doc.moveto x: '15.4 cm', y: '7.50 cm'
           doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
-          doc.moveto x: '15.4 cm', y: '3.3 cm'
+          doc.moveto x: '15.4 cm', y: '5.8 cm'
           doc.show number_to_currency(boleto.total_valor)
         end
 
