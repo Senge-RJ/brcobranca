@@ -274,7 +274,7 @@ module Brcobranca
           doc.image(boleto.logotipo, x: '2.10 cm', y: '12.50 cm', zoom: 60)
 
           # Numero do banco e DV
-          doc.moveto x: '6.1 cm', y: '12.50 cm'
+          doc.moveto x: '6.25 cm', y: '12.50 cm'
           doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :media
 
           # Linha digital
@@ -282,7 +282,7 @@ module Brcobranca
           doc.show boleto.codigo_barras.linha_digitavel, tag: :media
 
           # Cendete
-          doc.moveto x: '2.9 cm', y: '11.20 cm'
+          doc.moveto x: '2.9 cm', y: '10.20 cm'
           doc.show boleto.cedente
 
           # if boleto.sacado_documento.size == 14
@@ -291,19 +291,19 @@ module Brcobranca
           # end
 
           # Data do documento
-          doc.moveto x: '2.9 cm', y: '10.80 cm'
+          doc.moveto x: '2.9 cm', y: '9.20 cm'
           doc.show "#{Date.current.to_s_br}"
 
           # Nosso numero
-          doc.moveto x: '5.0 cm', y: '10.80 cm'
+          doc.moveto x: '5.0 cm', y: '9.20 cm'
           doc.show boleto.numero_documento.to_i.to_s, tag: :pequena
 
           # Data do documento
-          doc.moveto x: '10 cm', y: '7.2 cm'
+          doc.moveto x: '10 cm', y: '8.2 cm'
           doc.show "#{Date.current.to_s_br}"
 
           # Ano de exercicio
-          doc.moveto x: '1.9 cm', y: '6.7 cm'
+          doc.moveto x: '2.9 cm', y: '6.7 cm'
           doc.show boleto.exercicio
 
           # Instruções
