@@ -72,7 +72,7 @@ module Brcobranca
           modelo_guia_sindical_empresa_rodape(doc, boleto)
 
           # Gerando codigo de barra com rghost_barcode
-          doc.barcode_interleaved2of5(boleto.codigo_barras, width: '10.3 cm', height: '1.3 cm', x: '2.8 cm', y: '3.0 cm') if boleto.codigo_barras
+          doc.barcode_interleaved2of5(boleto.codigo_barras, width: '10.3 cm', height: '1.3 cm', x: '2.8 cm', y: '2.2 cm') if boleto.codigo_barras
 
           # Gerando stream
           formato = (options.delete(:formato) || Brcobranca.configuration.formato)
@@ -282,7 +282,7 @@ module Brcobranca
           doc.show boleto.codigo_barras.linha_digitavel, tag: :media
 
           # Cendete
-          doc.moveto x: '2.8 cm', y: '10.80 cm'
+          doc.moveto x: '2.8 cm', y: '10.90 cm'
           doc.show boleto.cedente
 
           # if boleto.sacado_documento.size == 14
@@ -328,11 +328,11 @@ module Brcobranca
           # sacado
 
           #  Nome sacador
-          doc.moveto x: '2.8 cm', y: '5.0 cm'
+          doc.moveto x: '2.8 cm', y: '4.3 cm'
           doc.show boleto.sacado
 
           # Endereço completo
-          doc.moveto x: '2.8 cm', y: '4.7 cm'
+          doc.moveto x: '2.8 cm', y: '4.0 cm'
           doc.show "#{boleto.sacado_endereco_log} #{boleto.sacado_endereco_num} #{boleto.sacado_endereco_compl} #{boleto.sacado_endereco_bairro} #{boleto.sacado_endereco_cidade}  #{boleto.sacado_endereco_uf}"
 
           # Data de Vencimento
@@ -340,7 +340,7 @@ module Brcobranca
           doc.show boleto.data_vencimento.to_s_br
 
           # Local pagamento
-          doc.moveto x: '2.9 cm', y: '11.5 cm'
+          doc.moveto x: '2.9 cm', y: '11.7 cm'
           doc.show 'LOCAL'
 
           doc.moveto x: '15.4 cm', y: '7.8 cm'
