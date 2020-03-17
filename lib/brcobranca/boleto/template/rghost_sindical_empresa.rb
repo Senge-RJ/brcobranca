@@ -243,7 +243,7 @@ module Brcobranca
 
           if boleto.sacado_documento.size == 14
 
-            doc.moveto x: '10.3 cm', y: '18.8 cm'
+            doc.moveto x: '10.3 cm', y: '18.7 cm'
             doc.show number_to_currency(boleto.total_remuneracao)
 
             doc.moveto x: '11.3 cm', y: '19.5 cm'
