@@ -271,7 +271,7 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '2.20 cm', y: '12.50 cm', zoom: 45)
+          doc.image(boleto.logotipo, x: '1.70 cm', y: '12.50 cm', zoom: 45)
 
           # Numero do banco e DV
           doc.moveto x: '6.35 cm', y: '12.50 cm'
@@ -348,7 +348,7 @@ module Brcobranca
           doc.show 'PREFERENCIALMENTE NAS CASAS LOTÉRICAS ATÉ O VALOR LIMITE'
 
           doc.moveto x: '15.4 cm', y: '10.90 cm'
-          doc.show "#{agencia}/#{boleto.documento_cedente_sicas}"
+          doc.show "#{agencia} / #{boleto.documento_cedente_sicas}"
 
           # Nosso numero
           doc.moveto x: '15.4 cm', y: '10.00 cm'
@@ -359,11 +359,11 @@ module Brcobranca
           doc.show number_to_currency(boleto.valor)
 
           #  Multa  - Sacador
-          doc.moveto x: '15.4 cm', y: '7.50 cm'
+          doc.moveto x: '15.4 cm', y: '6.60 cm'
           doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
-          doc.moveto x: '15.4 cm', y: '5.8 cm'
+          doc.moveto x: '15.4 cm', y: '5.0 cm'
           doc.show number_to_currency(boleto.total_valor)
         end
 
