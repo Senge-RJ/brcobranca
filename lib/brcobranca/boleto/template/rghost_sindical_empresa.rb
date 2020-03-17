@@ -235,28 +235,28 @@ module Brcobranca
           doc.moveto x: '8.1 cm', y: '20.30 cm'
           doc.show 'X', tag: :grande
 
-          #if boleto.sacado_documento.size == 14
-          #
-          #   doc.moveto x: '10.3 cm', y: '15.6 cm'
-          #   doc.show number_to_currency(boleto.total_remuneracao)
-          #
-          #   doc.moveto x: '11.3 cm', y: '14.9 cm'
-          #   doc.show boleto.total_profissionais
-          #
-          #   doc.moveto x: '1.8 cm', y: '15.1 cm'
-          #   doc.show "Prezado Empregador"
-          #
-          #   doc.moveto x: '1.8 cm', y: '14.8 cm'
-          #   doc.show "As informações dos dados do(s) profissional(is)"
-          #
-          #   doc.moveto x: '1.8 cm', y: '14.5 cm'
-          #   doc.show "e do valor de cada contribuição referente a esta GRCSU são da responsabilidade"
-          #
-          #   doc.moveto x: '1.8 cm', y: '14.2 cm'
-          #   doc.show "EXCLUSIVA do próprio EMPREGADOR."
-          #
-          #
-          #else
+          if boleto.sacado_documento.size == 14
+
+            doc.moveto x: '10.3 cm', y: '15.6 cm'
+            doc.show number_to_currency(boleto.total_remuneracao)
+
+            doc.moveto x: '11.3 cm', y: '14.9 cm'
+            doc.show boleto.total_profissionais
+
+            doc.moveto x: '2.8 cm', y: '17.9 cm'
+            doc.show "Prezado Empregador"
+
+            doc.moveto x: '2.8 cm', y: '17.5 cm'
+            doc.show "As informações dos dados do(s) profissional(is)"
+
+            doc.moveto x: '2.8 cm', y: '17.10 cm'
+            doc.show "e do valor de cada contribuição referente a esta GRCSU são da responsabilidade"
+
+            doc.moveto x: '2.8 cm', y: '16.70 cm'
+            doc.show "EXCLUSIVA do próprio EMPREGADOR."
+
+
+          else
             doc.moveto x: '2.8 cm', y: '17.2 cm'
             doc.show "Prezado(a) profissional,"
 
@@ -268,7 +268,7 @@ module Brcobranca
 
             doc.moveto x: '2.8 cm', y: '16.0 cm'
             doc.show "EXCLUSIVA do próprio profissional contribuinte."
-          #end
+          end
             
         end
 
