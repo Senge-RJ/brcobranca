@@ -99,7 +99,7 @@ module Brcobranca
           # Cedente - Beneficiario
 
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '2.10 cm', y: '27.00 cm', zoom: 100)
+          doc.image(boleto.logotipo, x: '2.10 cm', y: '28.00 cm', zoom: 100)
 
           # Numero do banco e DV
           doc.moveto x: '1.3 cm', y: '12.65 cm'
