@@ -277,7 +277,7 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '2.10 cm', y: '12.00 cm', zoom: 80)
+          doc.image(boleto.logotipo, x: '1.80 cm', y: '13.00 cm', zoom: 80)
 
           # Numero do banco e DV
           doc.moveto x: '4.9 cm', y: '9 cm'
