@@ -237,22 +237,22 @@ module Brcobranca
 
           if boleto.sacado_documento.size == 14
 
-            doc.moveto x: '10.3 cm', y: '15.6 cm'
+            doc.moveto x: '10.3 cm', y: '18.0 cm'
             doc.show number_to_currency(boleto.total_remuneracao)
 
-            doc.moveto x: '11.3 cm', y: '14.9 cm'
+            doc.moveto x: '11.3 cm', y: '19.0 cm'
             doc.show boleto.total_profissionais
 
-            doc.moveto x: '2.8 cm', y: '17.9 cm'
+            doc.moveto x: '2.8 cm', y: '17.0 cm'
             doc.show "Prezado Empregador"
 
-            doc.moveto x: '2.8 cm', y: '17.5 cm'
+            doc.moveto x: '2.8 cm', y: '16.70 cm'
             doc.show "As informações dos dados do(s) profissional(is)"
 
-            doc.moveto x: '2.8 cm', y: '17.10 cm'
+            doc.moveto x: '2.8 cm', y: '16.40 cm'
             doc.show "e do valor de cada contribuição referente a esta GRCSU são da responsabilidade"
 
-            doc.moveto x: '2.8 cm', y: '16.70 cm'
+            doc.moveto x: '2.8 cm', y: '16.10 cm'
             doc.show "EXCLUSIVA do próprio EMPREGADOR."
 
 
