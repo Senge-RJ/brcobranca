@@ -110,7 +110,7 @@ module Brcobranca
           doc.show boleto.codigo_barras.linha_digitavel, tag: :grande
 
           # Codigo da Entidade Sindica (Código de Cedente)
-          doc.moveto x: '14.80 cm', y: '25.60 cm'
+          doc.moveto x: '14.80 cm', y: '25.70 cm'
           doc.show boleto.documento_cedente_sicas
 
           # Nosso numero
