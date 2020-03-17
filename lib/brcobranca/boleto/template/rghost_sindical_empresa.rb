@@ -110,7 +110,7 @@ module Brcobranca
           doc.show boleto.codigo_barras.linha_digitavel, tag: :grande
 
           # Codigo da Entidade Sindica (Código de Cedente)
-          doc.moveto x: '1 cm', y: '11.9 cm'
+          doc.moveto x: '14.40 cm', y: '25.50 cm'
           doc.show boleto.documento_cedente_sicas
 
           # Nosso numero
@@ -261,15 +261,6 @@ module Brcobranca
 
             doc.moveto x: '1.8 cm', y: '14.5 cm'
             doc.show "valor da contribuição são da responsabilidade EXCLUSIVA do próprio profissional contribuinte."
-
-            doc.moveto x: '1.8 cm', y: '14.2 cm'
-            doc.show "SAC CAIXA: 0800 726 0101 (informações, reclamações, sugestões e elogios)."
-
-            doc.moveto x: '1.8 cm', y: '13.9 cm'
-            doc.show "Para pessoas com deficiência auditiva ou de fala: 0800 726 2492."
-
-            doc.moveto x: '1.8 cm', y: '13.6 cm'
-            doc.show  "Ouvidoria: 0800 725 7474. caixa.gov.br.*"
           end
             
         end
@@ -277,7 +268,7 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '1.80 cm', y: '13.00 cm', zoom: 80)
+          doc.image(boleto.logotipo, x: '1.70 cm', y: '12.50 cm', zoom: 80)
 
           # Numero do banco e DV
           doc.moveto x: '4.9 cm', y: '9 cm'
