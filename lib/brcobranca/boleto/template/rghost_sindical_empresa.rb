@@ -72,7 +72,7 @@ module Brcobranca
           modelo_guia_sindical_empresa_rodape(doc, boleto)
 
           # Gerando codigo de barra com rghost_barcode
-          doc.barcode_interleaved2of5(boleto.codigo_barras, width: '10.3 cm', height: '1.3 cm', x: '2.8 cm', y: '2.2 cm') if boleto.codigo_barras
+          doc.barcode_interleaved2of5(boleto.codigo_barras, width: '10.3 cm', height: '1.3 cm', x: '2.8 cm', y: '2.0 cm') if boleto.codigo_barras
 
           # Gerando stream
           formato = (options.delete(:formato) || Brcobranca.configuration.formato)
@@ -102,11 +102,11 @@ module Brcobranca
           doc.image(boleto.logotipo, x: '2.10 cm', y: '27.50 cm', zoom: 80)
 
           # Numero do banco e DV
-          doc.moveto x: '2.4 cm', y: '15.65 cm'
+          doc.moveto x: '2.8 cm', y: '15.40 cm'
           doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :grande
 
           # Linha digital
-          doc.moveto x: '4.0 cm', y: '15.65 cm'
+          doc.moveto x: '4.3 cm', y: '15.40 cm'
           doc.show boleto.codigo_barras.linha_digitavel, tag: :grande
 
           # Codigo da Entidade Sindica (Código de Cedente) Ajustado
@@ -271,10 +271,10 @@ module Brcobranca
         # Monta o corpo e rodapé do layout do boleto
         def modelo_guia_sindical_empresa_rodape(doc, boleto)
           # Logo do Banco
-          doc.image(boleto.logotipo, x: '2.10 cm', y: '12.50 cm', zoom: 60)
+          doc.image(boleto.logotipo, x: '2.10 cm', y: '12.50 cm', zoom: 45)
 
           # Numero do banco e DV
-          doc.moveto x: '6.25 cm', y: '12.50 cm'
+          doc.moveto x: '6.35 cm', y: '12.50 cm'
           doc.show "#{boleto.banco}-#{boleto.banco_dv}", tag: :media
 
           # Linha digital
@@ -328,11 +328,11 @@ module Brcobranca
           # sacado
 
           #  Nome sacador
-          doc.moveto x: '2.8 cm', y: '4.3 cm'
+          doc.moveto x: '2.8 cm', y: '4.4 cm'
           doc.show boleto.sacado
 
           # Endereço completo
-          doc.moveto x: '2.8 cm', y: '4.0 cm'
+          doc.moveto x: '2.8 cm', y: '4.1 cm'
           doc.show "#{boleto.sacado_endereco_log} #{boleto.sacado_endereco_num} #{boleto.sacado_endereco_compl} #{boleto.sacado_endereco_bairro} #{boleto.sacado_endereco_cidade}  #{boleto.sacado_endereco_uf}"
 
           # Data de Vencimento
