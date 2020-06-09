@@ -304,7 +304,7 @@ module Brcobranca
 
           # Nosso numero
           doc.moveto x: '5.0 cm', y: '10.00 cm'
-          doc.show boleto.numero_documento.to_i.to_s
+          doc.show "#{boleto.numero_documento.to_i.to_s}-#{boleto.nosso_numero_dv}"
 
           # Especie documento
           doc.moveto x: '8.60 cm', y: '10.00 cm'
