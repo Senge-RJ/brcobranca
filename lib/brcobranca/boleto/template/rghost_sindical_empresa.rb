@@ -225,11 +225,11 @@ module Brcobranca
 
           #  Multa  - Sacador
           doc.moveto x: '14.8 cm', y: '17.85 cm'
-          doc.show number_to_currency(boleto.mora_multa)
+          # doc.show number_to_currency(boleto.mora_multa)
 
           #  Valor Total  - Sacador
           doc.moveto x: '14.8 cm', y: '16.05 cm'
-          doc.show number_to_currency(boleto.total_valor)
+          # doc.show number_to_currency(boleto.total_valor)
 
           # Categoria
           #
