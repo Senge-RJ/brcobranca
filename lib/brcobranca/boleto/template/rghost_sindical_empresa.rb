@@ -119,7 +119,7 @@ module Brcobranca
 
           #  Valor do Documento  - Sacador
           doc.moveto x: '9.30 cm', y: '14.65 cm'
-          doc.show boleto.valor
+          doc.show number_to_currency(boleto.valor)
 
           # Data de Vencimento Ajustado
           doc.moveto x: '15.80 cm', y: '26.6 cm'
