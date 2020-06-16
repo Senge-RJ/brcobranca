@@ -115,7 +115,7 @@ module Brcobranca
 
           # Nosso numero
           doc.moveto x: '6.10 cm', y: '14.65 cm'
-          doc.show boleto.numero_documento.to_i.to_s
+          doc.show "#{boleto.numero_documento.to_i.to_s}-#{boleto.nosso_numero_dv}"
 
           #  Valor do Documento  - Sacador
           doc.moveto x: '9.30 cm', y: '14.65 cm'
@@ -360,7 +360,7 @@ module Brcobranca
 
           # Nosso numero
           doc.moveto x: '15.4 cm', y: '10.00 cm'
-          doc.show boleto.numero_documento.to_i.to_s
+          doc.show "#{boleto.numero_documento.to_i.to_s}-#{boleto.nosso_numero_dv}"
 
           #  Valor do Documento  - Sacador
           doc.moveto x: '15.4 cm', y: '9.20 cm'
